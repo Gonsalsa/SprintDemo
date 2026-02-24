@@ -1,14 +1,30 @@
-﻿
+﻿Console.WriteLine("Choose your conversion:");
+Console.WriteLine("1: Convert Fahrenheit to Celsius");
+Console.WriteLine("2: Convert Celsius to Fahrenheit");
 
+int choice = Convert.ToInt32(Console.ReadLine());
 
-using SprintDemo;
-using System.Threading.Channels;
+switch (choice)
+{
+   case 1:
+      Console.Write("Enter the temperature in Fahrenheit: ");
+      double fahrInput = Convert.ToDouble(Console.ReadLine()); 
+      
+      double toCelsius = (fahrInput - 32) / 1.8;
+        
+      Console.WriteLine($"{fahrInput}°F is {toCelsius}°C");
+      break;
 
-Console.WriteLine("===TEMPERATUR OMVANLDARE===");
+   case 2:
+      Console.Write("Enter the temperature in Celsius: ");
+      double celsInput = Convert.ToDouble(Console.ReadLine());
+      
+      double toFahrenheit = (celsInput * 1.8) + 32;
+        
+      Console.WriteLine($"{celsInput}°C is {toFahrenheit}F");
+      break;
 
-Console.Write("Skriv in temperaturen i Farenheit:");
-int inTemp = Int32.Parse(Console.ReadLine());
-
-var converted = FarenheitToCelcius.farToCels(inTemp);
-
-Console.Write($"Tempen i Celsius är: {converted} C");
+   default:
+      Console.WriteLine("Invalid choice. Please pick 1 or 2.");
+      break;
+}

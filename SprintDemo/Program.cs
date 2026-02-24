@@ -1,18 +1,14 @@
 ﻿
 
 
+using SprintDemo;
+using System.Threading.Channels;
+
 Console.WriteLine("===TEMPERATUR OMVANLDARE===");
 
 Console.Write("Skriv in temperaturen i Farenheit:");
 int inTemp = Int32.Parse(Console.ReadLine());
 
- static int FarToCels(int startTemp)
-{
-    var convertedTemp = (startTemp - 32) * (5 / 9);
+var converted = FarenheitToCelcius.farToCels(inTemp);
 
-    return convertedTemp;
-}
-
-
-Console.Write("Tempen i Celsius är: ");
-Console.WriteLine(FarToCels(inTemp));
+Console.Write($"Tempen i Celsius är: {converted} C");

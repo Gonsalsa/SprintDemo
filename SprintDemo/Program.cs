@@ -8,11 +8,11 @@ switch (choice)
 {
    case 1:
       Console.Write("Enter the temperature in Fahrenheit: ");
-      double fahrInput = Convert.ToDouble(Console.ReadLine());
+      double fahrInput = Convert.ToDouble(Console.ReadLine()); 
       
       double toCelsius = (fahrInput - 32) / 1.8;
         
-      Console.WriteLine($"{fahrInput}°F is {toCelsius:N2}°C");
+      Console.WriteLine($"{fahrInput}°F is {toCelsius}°C");
       break;
 
    case 2:
@@ -21,7 +21,7 @@ switch (choice)
       
       double toFahrenheit = (celsInput * 1.8) + 32;
         
-      Console.WriteLine($"{celsInput}°C is {toFahrenheit:N2}°F");
+      Console.WriteLine($"{celsInput}°C is {toFahrenheit}F");
       break;
 
    default:
